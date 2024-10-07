@@ -16,7 +16,8 @@ Logging: Logs generated for tracking ETL pipeline status and errors
 Project Flow Diagram
 
 (Add this diagram by uploading the image to the GitHub repo and referencing the image file here.)
-![Alt text]([flow_diagram/project flow diagram.png](https://github.com/Abhinav9119/Automated-Data-Pipeline-Leveraging-Aws-Pyspark-hive-and-Airflow-for-Dynamic-Data-Warehousing/blob/main/flow_diagram/project%20flow%20diagram.png))
+
+![**Flow Diagram**](https://github.com/Abhinav9119/Automated-Data-Pipeline-Leveraging-Aws-Pyspark-hive-and-Airflow-for-Dynamic-Data-Warehousing/blob/main/flow_diagram/project%20flow%20diagram.png))
 
 
 ETL Pipeline Structure
