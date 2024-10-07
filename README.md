@@ -1,48 +1,73 @@
 # Automated-Data-Pipeline-Leveraging-Aws-Pyspark-hive-and-Airflow-for-Dynamic-Data-Warehousing
 
-### Project Overview
+## Project Overview
+   
    This project demonstrates the complete lifecycle of a data engineering pipeline, from data extraction to transformation and loading (ETL). The project uses AWS, PySpark, Hive, and Airflow to build a scalable and optimized data warehouse architecture.
-    The goal is to extract sales, customer, employee, and product data from AWS storage, perform necessary transformations using PySpark, and load it into a Hive data warehouse. The data is modeled using star schema and separated into different data marts for easy access by various departments. Additionally, it supports incremental loads, slowly changing dimensions (SCDs), and includes mechanisms for logging, error handling, and password encryption.
 
-### Technologies Used
+   The goal is to extract sales, customer, employee, and product data from AWS storage, perform necessary transformations using PySpark, and load it into a Hive data warehouse. The data is modeled using star schema and separated into different data marts for easy access by various departments. Additionally, it supports incremental loads, slowly changing dimensions (SCDs), and includes mechanisms for logging, error handling, and password encryption.
+
+## Technologies Used
+
 **AWS** S3: Data storage for raw data (CSV and JSON formats)
+
 **PySpark**: Data transformation, cleaning, and normalization
+
 **Hive**: Data warehouse solution for structured storage
+
 **Airflow**: ETL automation and scheduling
+
 **Python**: Primary programming language used
+
 **Dimensional Modeling**: Data warehouse schema designed using star schema
+
 **Security**: Password and key encryption using cryptography library
 Logging: Logs generated for tracking ETL pipeline status and errors
 Project Flow Diagram
 
-(Add this diagram by uploading the image to the GitHub repo and referencing the image file here.)
+**Projec Flow Diagram**
 
 ![**Flow Diagram**](https://github.com/Abhinav9119/Automated-Data-Pipeline-Leveraging-Aws-Pyspark-hive-and-Airflow-for-Dynamic-Data-Warehousing/blob/main/flow_diagram/project%20flow%20diagram.png))
 
 
-ETL Pipeline Structure
-1. Data Extraction
+## ETL Pipeline Structure
+### 1. Data Extraction
+
 Extract data from AWS S3, which includes:
-Customer Data: JSON format
-Employee Data: JSON format
+
+**Customer Data:** JSON format
+
+**Employee Data:** JSON format
+
 Product Data: JSON format
+
 Sales Data: CSV format
-2. Data Transformation
-PySpark is used for transforming data:
-Data Cleaning: Handle missing or corrupted values.
-Normalization: Convert the data into a consistent format.
-Handling Slowly Changing Dimensions (SCD): Managing historical data for customer and employee dimensions.
-Joining: Joining sales data with customer, product, and employee dimensions to create a fact table.
-3. Data Loading
-Load the transformed data into Hive:
-Fact Table: Sales fact table
-Dimension Tables: Customer, Employee, Product, Date
+
+### 2. Data Transformation
+
+**PySpark** is used for transforming data:
+
+**Data Cleaning:** Handle missing or corrupted values.
+
+**Normalization:** Convert the data into a consistent format.
+
+**Handling Slowly Changing Dimensions (SCD):** Managing historical data for customer and employee dimensions.
+
+**Joining:** Joining sales data with customer, product, and employee dimensions to create a fact table.
+
+### 3. Data Loading
+Load the transformed data into **Hive**:
+**Fact Table:** Sales fact table
+
+**Dimension Tables:** Customer, Employee, Product, Date
 Store data into specific Data Marts for different departments:
-Customer Data Mart
-Sales Data Mart
-Employee Data Mart
-4. Automation with Airflow
+
+**Customer Data Mart**
+**Sales Data Mart**
+**Employee Data Mart**
+
+### 4. Automation with Airflow
 The entire ETL process is automated using Apache Airflow. This allows for scheduled daily data processing and supports incremental updates.
+
 Airflow DAG manages:
 Data extraction
 Transformation and loading
