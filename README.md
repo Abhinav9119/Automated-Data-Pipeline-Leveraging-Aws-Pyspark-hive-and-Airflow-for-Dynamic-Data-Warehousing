@@ -24,7 +24,7 @@
 Logging: Logs generated for tracking ETL pipeline status and errors
 Project Flow Diagram
 
-**Projec Flow Diagram**
+**Project Flow Diagram**
 
 ![**Flow Diagram**](https://github.com/Abhinav9119/Automated-Data-Pipeline-Leveraging-Aws-Pyspark-hive-and-Airflow-for-Dynamic-Data-Warehousing/blob/main/flow_diagram/project%20flow%20diagram.png))
 
@@ -68,75 +68,46 @@ Store data into specific Data Marts for different departments:
 ### 4. Automation with Airflow
 The entire ETL process is automated using Apache Airflow. This allows for scheduled daily data processing and supports incremental updates.
 
-Airflow DAG manages:
-Data extraction
-Transformation and loading
-Data mart creation
-Data Warehouse Schema
+- Airflow DAG manages:
+
+  Data extraction
+   Transformation and loading
+   Data mart creation
+
+### Data Warehouse Schema
 The data warehouse is designed in a star schema with the following tables:
 
-Fact Table
-Sales Fact Table: Contains sales transaction details, product information, and associated customers and employees.
-Dimension Tables
-Customer Dimension: Contains customer details like name, age, location, and loyalty tier.
-Employee Dimension: Contains employee details such as name, department, and hire date.
-Product Dimension: Contains product-related data like product name and category.
-Date Dimension: Stores the date of the sales transaction.
-Data Marts
+#### Fact Table
+**Sales Fact Table:** Contains sales transaction details, product information, and associated customers and employees.
+
+#### Dimension Tables
+**Customer Dimension:** Contains customer details like name, age, location, and loyalty tier.
+**Employee Dimension:** Contains employee details such as name, department, and hire date.
+**Product Dimension:** Contains product-related data like product name and category.
+**Date Dimension:** Stores the date of the sales transaction.
+
+#### Data Marts
 Data marts are designed for specific departments. These include:
 
-Customer Data Mart
+**Customer Data Mart**
 Customer ID, Name, and Loyalty Tier
-Sales Data Mart
+
+**Sales Data Mart**
 Sales ID, Product ID, Customer ID, Sales Amount
-Employee Data Mart
+
+**Employee Data Mart**
 Employee ID, Name, Department
-Project Directory Structure
-plaintext
-Copy code
-├── data_generation/             
-│   ├── DataGenerator.py          # Scripts for generating dummy data in CSV and JSON formats
-├── etl/                         
-│   ├── ETLProcess.py             # Core ETL process including extraction, transformation, and loading
-├── airflow/                     
-│   ├── dags/                    
-│   │   └── etl_pipeline.py       # Airflow DAG for running the ETL pipeline
-├── hive/                        
-│   ├── create_tables.hql         # HiveQL scripts to create fact and dimension tables
-│   └── data_marts.hql            # HiveQL scripts to create data marts
-├── utils/                       
-│   ├── Logger.py                 # Logging setup for ETL processes
-│   └── Encryption.py             # Password encryption using the cryptography library
-├── main.py                       # Main entry point for running the ETL process
-├── README.md                     # Project description and instructions
-Installation and Setup
-1. Prerequisites
-Python 3.x
-Apache Spark
-Apache Hive
-Apache Airflow
-AWS Account with S3 buckets for storing data
-2. Install Dependencies
-Install the required Python libraries:
-bash
-Copy code
-pip install pyspark cryptography airflow
-3. Setup Hive and AWS
-Setup Hive tables using the provided HiveQL scripts in the hive/ directory.
-Configure AWS credentials to access S3 for data storage.
-4. Run the ETL Pipeline
+
+## Run the ETL Pipeline
 To manually run the ETL pipeline, execute:
-bash
-Copy code
-python main.py
+
+**python main.py**
+
 To schedule and automate the pipeline, set up Apache Airflow, and deploy the DAG in airflow/dags/etl_pipeline.py.
-Security Features
-Password Encryption: All sensitive information such as passwords and keys are encrypted using the cryptography package.
-Logging: Comprehensive logging is implemented to track each step of the ETL pipeline, including any errors.
-Project Features
-Incremental Load Support: The pipeline handles incremental data loads, only processing new or changed records.
-Slowly Changing Dimensions: The pipeline supports SCDs for dimension tables like Customer and Employee to preserve historical data.
-Data Marts: Specific data marts are created for departments such as Sales, Customer, and Employee to optimize query performance.
-Scalable: The pipeline can easily scale to handle large datasets using PySpark and AWS.
-Contributing
-Feel free to fork this repository and contribute by submitting a pull request. Any improvements, bug fixes, or additional features are welcome!
+
+## Project Features
+**Incremental Load Support:** The pipeline handles incremental data loads, only processing new or changed records.
+
+**Slowly Changing Dimensions:** The pipeline supports SCDs for dimension tables like Customer and Employee to preserve historical data.
+**Data Marts:** Specific data marts are created for departments such as Sales, Customer, and Employee to optimize query performance.
+**Scalable:** The pipeline can easily scale to handle large datasets using PySpark and AWS.
