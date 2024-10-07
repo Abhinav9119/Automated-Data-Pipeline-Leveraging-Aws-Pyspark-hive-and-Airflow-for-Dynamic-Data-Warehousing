@@ -16,6 +16,8 @@ Logging: Logs generated for tracking ETL pipeline status and errors
 Project Flow Diagram
 
 (Add this diagram by uploading the image to the GitHub repo and referencing the image file here.)
+![Alt text](flow_diagram/project flow diagram.png)
+
 
 ETL Pipeline Structure
 1. Data Extraction
